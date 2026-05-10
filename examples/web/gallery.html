@@ -1,0 +1,207 @@
+<!doctype html>
+<!--
+  gallery.html — side-by-side do/don't pairs.
+  This file is deliberately the most concrete thing in the repo: every rule
+  in DESIGN.md should be visible here as a "do" next to a "don't."
+-->
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Almanac · Do / Don&rsquo;t</title>
+  <link rel="stylesheet" href="../../tokens/tokens.css">
+  <link rel="stylesheet" href="../../components/web/almanac.css">
+  <style>
+    /* Gallery-only layout. Not part of the design system. */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .pair { display: contents; }
+    .pair > .col { padding: 16px; border: 1px solid var(--almanac-rule-line); }
+    .pair-title {
+      grid-column: 1 / -1;
+      font-family: var(--almanac-mono);
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--almanac-fg-mute);
+      margin-top: 16px;
+    }
+    .label {
+      font-family: var(--almanac-mono);
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .label.do  { color: var(--almanac-accent); }
+    .label.dont { color: var(--almanac-fg-mute); }
+
+    /* "Don't" demo styles — deliberately wrong. */
+    .bad-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+    .bad-button {
+      display: inline-block;
+      padding: 10px 16px;
+      background: linear-gradient(180deg, #ff6b3d, #c14a2a);
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      font-family: -apple-system, system-ui, sans-serif;
+    }
+    .bad-body {
+      font-family: -apple-system, system-ui, sans-serif;
+      max-width: none;
+    }
+    .bad-rainbow .a { color: #c14a2a; }
+    .bad-rainbow .b { color: #2a8a3a; }
+    .bad-rainbow .c { color: #2a3a8a; }
+    .bad-rainbow .d { color: #8a2a8a; }
+  </style>
+</head>
+<body class="almanac-page">
+
+  <header class="almanac-prose">
+    <span class="almanac-monolabel">Almanac · Do / Don&rsquo;t</span>
+    <h1 class="almanac-headline" style="margin-top: 8px;">A gallery of right and wrong</h1>
+    <hr class="almanac-header-divider">
+    <p class="almanac-body">Every rule has a positive and a negative. Read pairs left-to-right.</p>
+  </header>
+
+  <main class="gallery-grid" style="margin-top: 24px;">
+
+    <div class="pair-title">Hairline, not box</div>
+    <div class="pair">
+      <div class="col">
+        <span class="label do">— DO</span>
+        <h2 class="almanac-headline" style="font-size: 18px;">A scholarly entry</h2>
+        <hr class="almanac-divider">
+        <p class="almanac-body">A hairline rule separates the headline from the body. No frame, no shadow.</p>
+      </div>
+      <div class="col">
+        <span class="label dont">— DON&rsquo;T</span>
+        <div class="bad-card">
+          <h2 style="margin: 0; font-family: -apple-system, sans-serif;">Generic SaaS card</h2>
+          <p style="font-family: -apple-system, sans-serif; margin: 8px 0 0;">A boxed card with rounded corners and a drop shadow says &ldquo;product demo&rdquo;, not &ldquo;almanac&rdquo;.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pair-title">Accent only at attention</div>
+    <div class="pair">
+      <div class="col">
+        <span class="label do">— DO</span>
+        <p class="almanac-body">
+          The accent appears once: <span class="almanac-monolabel">— NOTICE</span>
+          here, then nowhere else on the page. Restraint earns the eye.
+        </p>
+      </div>
+      <div class="col bad-rainbow">
+        <span class="label dont">— DON&rsquo;T</span>
+        <p class="almanac-body">
+          <span class="a">Some</span> <span class="b">words</span> <span class="c">in</span>
+          <span class="d">a sentence</span> <span class="a">painted</span> <span class="b">like</span>
+          <span class="c">a parade</span>. Multiple accents quietly read as no accent.
+        </p>
+      </div>
+    </div>
+
+    <div class="pair-title">Serif body always</div>
+    <div class="pair">
+      <div class="col">
+        <span class="label do">— DO</span>
+        <p class="almanac-body">
+          Body in Source Serif 4 (or Georgia fallback). The serif slows the eye
+          to a reading pace, which is the point.
+        </p>
+      </div>
+      <div class="col">
+        <span class="label dont">— DON&rsquo;T</span>
+        <p class="bad-body">
+          Body in -apple-system / system-ui sans-serif. Looks like every other
+          dashboard. The almanac voice evaporates.
+        </p>
+      </div>
+    </div>
+
+    <div class="pair-title">No chrome</div>
+    <div class="pair">
+      <div class="col">
+        <span class="label do">— DO</span>
+        <p class="almanac-body" style="margin-bottom: 12px;">
+          Action as plain text or a tracked monolabel.
+        </p>
+        <span class="almanac-monolabel" style="display: inline-block; padding: 6px 12px; border: 1px solid var(--almanac-rule-line);">— Continue reading</span>
+      </div>
+      <div class="col">
+        <span class="label dont">— DON&rsquo;T</span>
+        <p class="almanac-body" style="margin-bottom: 12px;">Action as a glossy filled button with shadow.</p>
+        <span class="bad-button">Continue reading</span>
+      </div>
+    </div>
+
+    <div class="pair-title">Stars dark-mode only, sparse, static</div>
+    <div class="pair">
+      <div class="col">
+        <span class="label do">— DO</span>
+        <p class="almanac-body">
+          Six hand-placed dots, white at low opacity, only when
+          <code>data-theme=&quot;dark&quot;</code>. No animation. Toggle
+          dark in the corner to see them.
+        </p>
+      </div>
+      <div class="col">
+        <span class="label dont">— DON&rsquo;T</span>
+        <p class="almanac-body">
+          A 300-particle drifting starfield in light mode. The almanac is calm;
+          motion-rich backgrounds pull the eye off the prose.
+        </p>
+      </div>
+    </div>
+
+    <div class="pair-title">Measure ≈ 65ch</div>
+    <div class="pair">
+      <div class="col">
+        <span class="label do">— DO</span>
+        <p class="almanac-body">
+          A line that ends near the sixty-fifth character returns the eye to the
+          left margin without losing the line. Caps that with <code>max-width:
+          var(--almanac-measure)</code>.
+        </p>
+      </div>
+      <div class="col">
+        <span class="label dont">— DON&rsquo;T</span>
+        <p class="bad-body" style="max-width: none;">
+          A full-viewport-width line that stretches edge to edge regardless of how wide the window is, forcing the eye to swing through twice the necessary distance every line and quietly making the reader slower without telling them why.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="almanac-prose" style="margin-top: 48px;">
+    <hr class="almanac-divider">
+    <p class="almanac-italic">— end of gallery</p>
+  </footer>
+
+  <button id="theme-toggle"
+    style="position: fixed; bottom: 12px; right: 12px; font-family: var(--almanac-mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--almanac-accent); background: transparent; border: 1px solid var(--almanac-rule-line); padding: 6px 10px; cursor: pointer;">
+    Toggle dark
+  </button>
+  <script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      const r = document.documentElement;
+      r.setAttribute("data-theme", r.getAttribute("data-theme") === "dark" ? "light" : "dark");
+    });
+  </script>
+</body>
+</html>
