@@ -35,4 +35,14 @@ Quick start (web):
 
 Toggle dark with `data-theme="dark"` on `<html>`.
 
-Read [`DESIGN.md`](./DESIGN.md) for the full spec. Open [`examples/web/index.html`](./examples/web/index.html) and [`examples/web/gallery.html`](./examples/web/gallery.html) for the visual reference. The `almanac-design` Claude skill (in this server's `~/.claude/skills/`) lets the agent apply the system without reading the spec every time.
+Read [`DESIGN.md`](./DESIGN.md) for the full spec. Open [`examples/web/index.html`](./examples/web/index.html) and [`examples/web/gallery.html`](./examples/web/gallery.html) for the visual reference.
+
+## Claude skill
+
+This repo ships a Claude Code skill at [`.claude/skills/almanac-design/SKILL.md`](./.claude/skills/almanac-design/SKILL.md) so an agent can apply the system without re-reading `DESIGN.md` every time. To install on any machine:
+
+```bash
+ln -s "$(pwd)/.claude/skills/almanac-design" ~/.claude/skills/almanac-design
+```
+
+Then the skill is auto-discovered by Claude Code. The skill itself uses repo-relative paths, so it works wherever you clone this repo.
