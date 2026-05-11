@@ -1,6 +1,13 @@
 ---
 name: almanac-design
-description: Use when building a web page, slide deck, native UI, or any visual artifact in petter's house style — the warm-paper / midnight-paper "Almanac" aesthetic from SleeperChat. Triggers on "almanac", "scholarly", "warm paper", "petter's design system / phareim style", and on bare "make a landing page / build a slide deck" prompts when no other style is named.
+description: >
+  Apply the Almanac design system (warm paper / midnight paper, scholarly
+  serif body, hairline rules, sparse stars, one accent at the moment of
+  attention). ONLY invoke when the user explicitly asks for "Almanac" design,
+  the SleeperChat look, or this specific visual identity — e.g. "build a
+  landing page in Almanac style", "use the Almanac design system", "match
+  the SleeperChat aesthetic". Do NOT invoke for generic design requests
+  or when another brand/style is named.
 ---
 
 # Almanac design system
