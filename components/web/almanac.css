@@ -190,6 +190,51 @@
   .almanac-cursor { animation: none; opacity: 1; }
 }
 
+/* ---------- HeroImage (the plate) ------------------------------------ */
+/*
+  A full-width photographic plate at the top of a detail page — the almanac's
+  answer to a "hero image". Modeled on the tipped-in plate of an old book:
+  flat, cover-cropped, a hairline under it, a tracked mono caption beneath.
+  One per page. Never rounded, never shadowed, never text-overlaid.
+  Override the crop with --almanac-hero-ratio on the figure.
+*/
+
+.almanac-hero {
+  margin: 0;
+  width: 100%;
+}
+
+.almanac-hero img {
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--almanac-hero-ratio, 16 / 7);
+  object-fit: cover;
+  border: 0;
+  border-radius: 0;
+}
+
+/* Photos sink into the night paper instead of glowing against it. */
+:root.dark .almanac-hero img,
+:root[data-theme="dark"] .almanac-hero img {
+  filter: brightness(0.9) saturate(0.95);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not([data-theme="light"]) .almanac-hero img {
+    filter: brightness(0.9) saturate(0.95);
+  }
+}
+
+.almanac-hero-caption {
+  font-family: var(--almanac-mono);
+  font-size: var(--almanac-size-monolabel);
+  letter-spacing: var(--almanac-track-monolabel);
+  text-transform: uppercase;
+  color: var(--almanac-fg-mute);
+  border-top: var(--almanac-hairline) solid var(--almanac-rule-line);
+  padding-top: 6px;
+  margin-top: 6px;
+}
+
 /* ---------- Layout helpers ------------------------------------------ */
 
 .almanac-prose {

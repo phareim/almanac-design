@@ -70,6 +70,7 @@ The v1 component set is intentionally small. If you find yourself wanting a butt
 | **HeaderDivider** | `.almanac-header-divider` | `HeaderDivider` | Heavier rule under page titles. |
 | **ChatColumn** | `.almanac-chat` + `.almanac-chat-turn--{you,agent}` | `ChatView`-style usage | Serif column dialogue. No bubbles. |
 | **StreamingCursor** | `.almanac-cursor` | (inline `Rectangle`) | 2px accent rect, 1Hz blink. Honors `prefers-reduced-motion`. |
+| **HeroImage** | `.almanac-hero` (+ `.almanac-hero-caption`) | — (no Swift port yet) | The plate: a full-width photograph at the top of a detail page, like the tipped-in plate of an old book. Cover-cropped (`--almanac-hero-ratio`, default 16/7), hairline under, tracked mono caption beneath in mute (not accent). One per page. Never rounded, never shadowed, never text-overlaid; dims slightly in dark mode to sit into the night paper. |
 
 **Out of scope, v1:** buttons (use `.almanac-monolabel` with a hairline border or plain text), inputs, cards, modals, forms, navigation bars, tab bars. These dilute the aesthetic and aren't needed yet. Add them only when a real project demands them, and add the gallery entry first.
 
@@ -127,6 +128,7 @@ The rendered gallery at `examples/web/gallery.html` is the source of truth for t
 | Plain-text or mono-label "buttons" | Glossy filled buttons with shadow |
 | Streaming cursor 2px rect, 1Hz blink | Spinning dots, progress bars, toast pop-ups |
 | Accent dot on the orbital glyph | Accent on every heading |
+| Hero photo as a flat plate with mono caption | Rounded, shadowed hero with gradient text overlay |
 
 ## 9 · Working with Claude
 

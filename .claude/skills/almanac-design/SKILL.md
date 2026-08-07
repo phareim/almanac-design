@@ -35,7 +35,9 @@ Canonical spec: `DESIGN.md`.
 
 **Space:** gutter 22px, sectionGap 14px, hairline 1px.
 
-**v1 components:** OrbitalGlyph, Starfield (dark only), MonoLabel, SerifHeadline, SerifBody, SectionDivider, HeaderDivider, ChatColumn (YOU/AGENT pattern), StreamingCursor (2px accent, 1Hz blink). **NO buttons / cards / inputs / modals / forms** — use a MonoLabel with a hairline border for action affordances; sections use hairline dividers, not cards.
+**v1 components:** OrbitalGlyph, Starfield (dark only), MonoLabel, SerifHeadline, SerifBody, SectionDivider, HeaderDivider, ChatColumn (YOU/AGENT pattern), StreamingCursor (2px accent, 1Hz blink), HeroImage (see below). **NO buttons / cards / inputs / modals / forms** — use a MonoLabel with a hairline border for action affordances; sections use hairline dividers, not cards.
+
+**HeroImage — "the plate"** (added 2026-08-07): a full-width photograph at the top of a detail page, styled like the tipped-in plate of an old book. `figure.almanac-hero > img + figcaption.almanac-hero-caption`. Cover-cropped (`aspect-ratio` via `--almanac-hero-ratio`, default 16/7), hairline rule between image and caption, caption in tracked mono **mute** (not accent). One per page. Never rounded, never shadowed, never a gradient text overlay; dark mode dims it (`brightness(0.9) saturate(0.95)`) so photos sit into the night paper.
 
 ## Picking the artifact for the target stack
 
