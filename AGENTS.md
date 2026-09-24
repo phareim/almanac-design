@@ -1,5 +1,7 @@
 # Almanac Design — agent notes
 
+> **Arkivert 2026-09-24.** Tufte er husets designretning nå (skill `tufte-viz`, `~/github/skill-tufte-viz`). SleeperChat gikk over til Tufte 2026-08-01. Repoet er skrivebeskyttet på GitHub; `wiki-reader` leser fortsatt `tokens/tokens.json` herfra ved bygging.
+
 This is the cross-medium design system lifted from SleeperChat. **Read `DESIGN.md` first.** It is the canonical spec and is written to be skim-able in one read.
 
 ## Source of truth

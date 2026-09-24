@@ -1,5 +1,7 @@
 # Almanac Design
 
+> **Arkivert 2026-09-24.** Tufte er husets designretning nå (skill `tufte-viz`, `~/github/skill-tufte-viz`). SleeperChat gikk over til Tufte 2026-08-01. Repoet er skrivebeskyttet på GitHub; `wiki-reader` leser fortsatt `tokens/tokens.json` herfra ved bygging.
+
 A small, opinionated design system. Warm paper / midnight paper, scholarly serif body, hairline rules, sparse stars, one accent at the moment of attention.
 
 Lifted from the [SleeperChat iOS app](https://github.com/phareim/sleeper-chat) and ported so the same voice carries to web, slides, and any new native UI.
